@@ -1,94 +1,26 @@
 [
   {
-    "kerdes": "Az iparág attribútumai szerint kialakulhatnak:",
-    "valasz": "semleges, vevőcentrikus, szállítócentrikus és kevés szereplős piacterek."
-  },
-  {
-    "kerdes": "Mi az FPC a hitelkártyák esetében?",
-    "valasz": "Fixed Repayment Card"
-  },
-  {
-    "kerdes": "Mi a VPC a hitelkártyák esetében?",
-    "valasz": "Variable Repayment Card"
-  },
-  {
-    "kerdes": "Milyen technológiák alapján működnek a kriptovaluták?",
-    "valasz": "blockchain"
-  },
-  {
-    "kerdes": "A Token egy PIN-kóddal védett kódgenerátor, amely:",
-    "valasz": "egy egyszer felhasználható jelszót ad meg."
+    "kerdes": "A 14 napos elállási jog nem vonatkozik a következő termékekre:",
+    "valasz": "Személyre szabott termékek"
   },
   {
     "kerdes": "A 2011/83/EU irányelv szerint:",
-    "valasz": "üzlethelyiségen kívül kötött szerződésnek minősül az olyan vásárlás, amikor a kereskedő bizonyos kiszállásokat szervez reklámozás és értékesítés céljából."
-  },
-  {
-    "kerdes": "A szerzői jog keletkezésének pillanata:",
-    "valasz": "a szerző megalkotja a művet."
-  },
-  {
-    "kerdes": "A felhasználók társadalmi változói alapján megkülönböztetünk:",
-    "valasz": "általános, illetve specializált közösségi hálókat."
-  },
-  {
-    "kerdes": "Mi a hatása annak, hogy az adatvédelmet a GDPR szabályozza?",
-    "valasz": "Minden EU tagállamban azonosan kell alkalmazkodni."
-  },
-  {
-    "kerdes": "Az elektronikus úton kötött szerződések jogi kötőereje:",
-    "valasz": "azonos a hagyományos szerződésekével, abban az esetben, ha teljesülnek a szerződés érvényességéhez szükséges előírások"
-  },
-  {
-    "kerdes": "Az alábbiak közül melyik NEM személyes adat?",
-    "valasz": "anonimizált banki adatok"
-  },
-  {
-    "kerdes": "Egy adott oldal látogatottságát a következő mutatók jellemzik:",
-    "valasz": "page impression és full page impression"
-  },
-  {
-    "kerdes": "Az IP címek szöveggé alakítását az:",
-    "valasz": "DNS szerverek végzik"
-  },
-  {
-    "kerdes": "A 34/2014-es sürgősségi kormányrendelet értelmében:",
-    "valasz": "a vásárló indoklás nélkül elállhat a szerződéstől: 14 napon belül"
-  },
-  {
-    "kerdes": "Egy oldalnak akkor lesz magas a PR-je, ha:",
-    "valasz": "sokan mutatnak rá, vagy nagy PR-kel rendelkező oldalak mutatnak rá."
-  },
-  {
-    "kerdes": "Az e-pénz csoportosítása fejlettségi szint szerint:",
-    "valasz": "acces products e-money, chipkártyák és software-based e-money"
+    "valasz": "üzlethelyiségen kívül kötött szerződésnek minősül az olyan vásárlás is, amikor a kereskedő bizonyos kiszállásokat szervez reklámozás és értékesítés céljából"
   },
   {
     "kerdes": "Melyik webkatalógus?",
     "valasz": "Yahoo"
   },
   {
-    "kerdes": "Az alábbiak közül melyik joggal NEM rendelkezik egy természetes személy a GDPR alapján?",
-    "valasz": "Vásárlói jog"
+    "kerdes": "A felhasználóik társadalmi változói alapján megkülönböztetünk:",
+    "valasz": "általános, illetve specializált közösségi hálókat"
   },
   {
-    "kerdes": "Melyik igaz állítás?",
-    "valasz": "Az interaktív weboldalak tartalma egyértelműen ajánlatnak tekinthető"
+    "kerdes": "A Token egy PIN-kóddal védett kódgenerátor, amely:",
+    "valasz": "egy egyszer felhasználható jelszót ad meg"
   },
   {
-    "kerdes": "Elektronikus pénzszolgáltatók:",
-    "valasz": "Mondex, CyberCash, DigiCash stb."
-  },
-  {
-    "kerdes": "A 14 napos elállási jog NEM vonatkozik a következő termékekre:",
-    "valasz": "személyre szabott termékek"
-  },
-  {
-    "kerdes": "Az iparág attribútumai szerint kialakulhatnak:",
-    "valasz": "semleges, vevőcentrikus, szállítócentrikus és kevés szereplős piacterek."
-  },
-  {
-    "kerdes": "Hibás átutalás esetén a hibák alapvetően két csoportra oszthatóak:",
+    "kerdes": "Hibás átutalás esetén a hibák alapvetően két csoportra oszthatók:",
     "valasz": "Formai hiba és Fedezethiány"
   },
   {
@@ -96,43 +28,119 @@
     "valasz": "ügyféloldal, banki oldal, kommunikációs közeg"
   },
   {
-    "kerdes": "Melyek nem e-baking szolgáltatások?",
+    "kerdes": "Melyek nem e-banking szolgáltatások?",
     "valasz": "cyberbulling, online csekk, tele scrumming"
   },
   {
-    "kerdes": "Az elektromos aláírások fajtái:",
+    "kerdes": "Az elektronikus aláírások fajtái:",
     "valasz": "egyszerű elektronikus aláírás, fokozott biztonságú elektronikus aláírás és minősített elektronikus aláírás"
   },
   {
     "kerdes": "Nem hivatalos adatszerzés fajtái lehetnek a",
-    "valasz": "adathasználat, Pharming, Trójai program"
+    "valasz": "Adathalászat, Pharming, Trójai program"
+  },
+  {
+    "kerdes": "Az iparág attribútumai szerint kialakulhatnak:",
+    "valasz": "semleges, vevőcentrikus, szállítócentrikus és kevés szereplős piacterek"
   },
   {
     "kerdes": "Kérdés?",
-    "valasz": "Amelyet a hírdető reklámjának 1000 alkalommal történő megjelenéséért fizet."
+    "valasz": "amelyet a hirdető reklámjának 1000 alkalommal történő megjelenéséért fizet"
   },
   {
     "kerdes": "Az elektronikus úton kötött szerződések jogi kötőereje:",
-    "valasz": "azonos a hagyományok szerződésekével, abban az esetben, ha teljesülnek a szerződés érvényességéhez szükséges előírások."
+    "valasz": "azonos a hagyományos szerződésekével, abban az esetben, ha teljesülnek a szerződés érvényességéhez szükséges előírások"
+  },
+  {
+    "kerdes": "Mi az FPC a hitelkártyák esetén?",
+    "valasz": "Fixed Repayment Card"
+  },
+  {
+    "kerdes": "Mi a VPC a hitelkártyák esetén?",
+    "valasz": "Variable Repayment Card"
+  },
+  {
+    "kerdes": "Milyen technológia alapján működnek a kriptóvaluták?",
+    "valasz": "Blockchain"
   },
   {
     "kerdes": "Az elektronikus dokumentum fajtái:",
-    "valasz": "elektronikus dokumentum, elektronikus irat és elektronikus okirat"
+    "valasz": "Elektronikus dokumentum, elektronikus irat és elektronikus okirat"
   },
   {
-    "kerdes": "A látogatás (visit):",
-    "valasz": "egy mérőszám, amely definiálja az egy weboldalt megtátogatók számát."
+    "kerdes": "A látogatás",
+    "valasz": "egy mérőszám, amely definiálja az egy weboldalt meglátogatók számát"
   },
   {
     "kerdes": "A contactless kártyák tartalma:",
-    "valasz": "távolról is leolvasható."
+    "valasz": "távolról is leolvasható"
   },
   {
     "kerdes": "Az internetes reklámozás két terület:",
-    "valasz": "a hagyományos reklámozás és a direkt marketing találkozásából jött létre."
+    "valasz": "a hagyományos reklámozás és a direktmarketing találkozásából jött létre"
   },
   {
     "kerdes": "A látogató (visitor):",
-    "valasz": "alatt egy adott IP címet értünk."
+    "valasz": "alatt egy adott IP címet értünk"
+  },
+  {
+    "kerdes": "Egy oldalnak akkor lesz magas a PR-je ha:",
+    "valasz": "sokan mutatnak rá, vagy nagy PR-kel rendelkező oldalak mutatnak rá"
+  },
+  {
+    "kerdes": "A szerzői jog keletkezésének pillanata:",
+    "valasz": "a szerző megalkotja a művet"
+  },
+  {
+    "kerdes": "Mi a hatása annak, hogy az adatvédelmet a GDPR (Általános Adatvédelmi Rendelet) szabályozza?",
+    "valasz": "minden EU tagállamban azonosan kell alkalmazni"
+  },
+  {
+    "kerdes": "Az alábbiak közül melyik NEM személyes adat:",
+    "valasz": "anonimizált banki adatok"
+  },
+  {
+    "kerdes": "Egy adott oldal látogatottságát a következő mutatók jellemzik:",
+    "valasz": "page impression és full page impression"
+  },
+  {
+    "kerdes": "Az IP-címek szöveggé alakítását az",
+    "valasz": "DNS szerverek végzik"
+  },
+  {
+    "kerdes": "A 34/2014-es sürgősségi kormányrendelet értelmében a vásárló indoklás nélkül elállhat a szerződéstől:",
+    "valasz": "14 napon belül"
+  },
+  {
+    "kerdes": "Az e-pénz csoportosítása fejlettségi szint szerint:",
+    "valasz": "access products e-money, chipkártyák és software-based e-money"
+  },
+  {
+    "kerdes": "Az alábbiak közül melyik joggal NEM rendelkezik egy természetes személy a GDPR alapján:",
+    "valasz": "vásárlási jog"
+  },
+  {
+    "kerdes": "Melyik igaz állítás?",
+    "valasz": "Az interaktív weboldalak tartalma egyértelműen ajánlatnak tekinthető."
+  },
+  {
+    "kerdes": "Elektronikus pénzszolgáltatók:",
+    "valasz": "Mondex, CyberCash, DigiCash, stb"
+  },
+  {
+    "kerdes": "Mi a SWIFT?",
+    "valasz": "Nemzetközi elszámolási rendszer"
+  },
+  {
+    "kerdes": "A zárt e-kereskedelem alatt azt értjük, amikor:",
+    "valasz": "Amikor az eladó és a vevő között a kapcsolat adott, a szereplők egymás számára ismertek."
+  },
+  {
+    "kerdes": "Az igazi PageRank algoritmus, hogyan oldja meg a zsákutca problémát?",
+    "valasz": "Az oldalak optimalizálásával"
+  },
+  {
+    "kerdes": "Az e-banking funkciói:",
+    "valasz": "Tájékoztató, kommunikáción alapuló és tranzakciós típusú"
   }
 ]
