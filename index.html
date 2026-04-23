@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanulókártyák (Flashcards)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        :root {
+            /* Light mode variables */
+            --bg-gradient: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            --text-color: #2d3748;
+            --heading-color: #1a202c;
+            --card-bg: #ffffff;
+            --card-border: #f0f4f8;
+            --card-shadow: rgba(0,0,0,0.1);
+            --stats-text: #4a5568;
+            --theme-toggle-bg: #e2e8f0;
+            --theme-toggle-text: #2d3748;
+            --btn-bg: #667eea;
+            --btn-hover: #5a67d8;
+            --btn-text: #ffffff;
+        }
+
+        body.dark-mode {
+            /* Dark mode variables */
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --text-color: #e2e8f0;
+            --heading-color: #f8fafc;
+            --card-bg: #1e293b;
+            --card-border: #334155;
+            --card-shadow: rgba(0,0,0,0.5);
+            --stats-text: #cbd5e0;
+            --theme-toggle-bg: #334155;
+            --theme-toggle-text: #f8fafc;
+            --btn-bg: #4c51bf;
+            --btn-hover: #434190;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-color);
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        h1 {
+            color: var(--heading-color);
+            margin: 0;
+            font-size: 2.2em;
+        }
+
+        button {
+            background: var(--btn-bg);
+            color: var(--btn-text);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background: var(--btn-hover);
+            transform: translateY(-2px);
+        }
+
+        #theme-toggle {
+            background: var(--theme-toggle-bg);
+            color: var(--theme-toggle-text);
+            border-radius: 20px;
+        }
+
+        .controls {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .controls label {
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #cards-container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+        }
+
+        /* GRID mód, ha az összeset mutatjuk */
+        #cards-container.show-all {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            align-items: stretch;
+        }
+
+        .flashcard {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px var(--card-shadow);
+            cursor: pointer;
+            min-height: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        #cards-container:not(.show-all) .flashcard {
+            min-height: 300px;
+            max-width: 600px;
+        }
+
+        .flashcard:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px var(--card-shadow);
+        }
+
+        .card-content {
+            font-size: 1.25em;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .card-answer {
+            display: none;
+            color: var(--btn-bg);
+            margin-top: 20px;
+            font-size: 1.15em;
+            font-weight: 400;
+            border-top: 1px solid var(--card-border);
+            padding-top: 20px;
+            width: 100%;
+        }
+
+        .flashcard.flipped .card-question {
+            display: none;
+        }
+
+        .flashcard.flipped .card-answer {
+            display: block;
+            border-top: none;
+            padding-top: 0;
+            margin-top: 0;
+            font-weight: 600;
+        }
+        
+        /* Opcionális: Mutassuk mindkettőt feliratként, ha flipped, de inkább váltson át! */
+        /* Ezt a vizuális visszajelzést tehetjük úgy, hogy a kérdés kicsi lesz a válasz felett */
+        .flashcard.flipped .card-question {
+            display: block;
+            font-size: 0.9em;
+            font-weight: 400;
+            opacity: 0.7;
+            margin-bottom: 15px;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+            display: none; /* Rejtve, ha all-mode */
+        }
+
+        .error {
+            color: #e53e3e;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <h1>Tanulókártyák</h1>
+        <button id="theme-toggle">🌙 Sötét mód</button>
+    </div>
+
+    <div class="controls">
+        <label>
+            <input type="radio" name="view-mode" value="single" checked> Egy lap mutatása
+        </label>
+        <label>
+            <input type="radio" name="view-mode" value="all"> Összes lap mutatása
+        </label>
+    </div>
+
+    <div id="cards-container">
+        <p>Kártyák betöltése...</p>
+    </div>
+
+    <div class="nav-buttons" id="nav-buttons">
+        <button id="prev-btn">◀ Hátra</button>
+        <span id="card-counter" style="align-self: center; font-weight: 600;"></span>
+        <button id="next-btn">Előre ▶</button>
+    </div>
+
+    <script>
+        // Sötét/világos mód váltás
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            body.classList.add('dark-mode');
+            themeToggle.textContent = '☀️ Világos mód';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                themeToggle.textContent = '☀️ Világos mód';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggle.textContent = '🌙 Sötét mód';
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // JSON fájlok neve, amiket be akarunk tölteni
+        const jsonFiles = ["lapok.json"];
+        let allCards = [];
+        let currentIndex = 0;
+        let viewMode = 'single'; // 'single' vagy 'all'
+
+        const container = document.getElementById('cards-container');
+        const navButtons = document.getElementById('nav-buttons');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const counter = document.getElementById('card-counter');
+        const modeRadios = document.querySelectorAll('input[name="view-mode"]');
+
+        modeRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                viewMode = e.target.value;
+                renderCards();
+            });
+        });
+
+        async function loadCards() {
+            container.innerHTML = '<p>Kártyák betöltése...</p>';
+            allCards = [];
+            currentIndex = 0;
+
+            try {
+                for (const file of jsonFiles) {
+                    const response = await fetch(file);
+                    if (!response.ok) {
+                        console.warn('Nem sikerült betölteni a fájlt: ' + file);
+                        continue;
+                    }
+                    const data = await response.json();
+                    if (Array.isArray(data)) {
+                        allCards = allCards.concat(data);
+                    } else if (data.question || data.kerdes) {
+                        allCards.push(data);
+                    }
+                }
+
+                if (allCards.length === 0) {
+                    container.innerHTML = '<p>Nem található kártya a megadott fájlokban.</p>';
+                    return;
+                }
+
+                // Randomizáljuk a kártyákat, ha szeretnéd (most kommentezve, hogy sorrendben legyenek)
+                // allCards.sort(() => Math.random() - 0.5);
+
+                renderCards();
+
+            } catch (error) {
+                console.error('Hiba történt:', error);
+                container.innerHTML = '<p class="error">Hiba történt a kártyák betöltésekor. Kérlek ellenőrizd a JSON fájlt!</p>';
+            }
+        }
+
+        function renderCards() {
+            container.innerHTML = '';
+            
+            if (viewMode === 'all') {
+                container.classList.add('show-all');
+                navButtons.style.display = 'none';
+                
+                allCards.forEach(card => {
+                    const cardEl = createCardElement(card);
+                    container.appendChild(cardEl);
+                });
+            } else {
+                container.classList.remove('show-all');
+                navButtons.style.display = 'flex';
+                
+                const cardEl = createCardElement(allCards[currentIndex]);
+                container.appendChild(cardEl);
+                updateNav();
+            }
+        }
+
+        function createCardElement(cardData) {
+            const card = document.createElement('div');
+            card.className = 'flashcard';
+            
+            // Kérdés div
+            const qDiv = document.createElement('div');
+            qDiv.className = 'card-content card-question';
+            qDiv.textContent = cardData.question || cardData.kerdes || 'Nincs megadva kérdés';
+            
+            // Válasz div
+            const aDiv = document.createElement('div');
+            aDiv.className = 'card-content card-answer';
+            aDiv.textContent = cardData.answer || cardData.valasz || cardData.válasz || 'Nincs megadva válasz';
+
+            card.appendChild(qDiv);
+            card.appendChild(aDiv);
+            
+            // Kattintásra forgatás
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+            
+            return card;
+        }
+
+        function updateNav() {
+            counter.textContent = (currentIndex + 1) + ' / ' + allCards.length;
+            prevBtn.disabled = currentIndex === 0;
+            prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+            
+            nextBtn.disabled = currentIndex === allCards.length - 1;
+            nextBtn.style.opacity = currentIndex === allCards.length - 1 ? '0.5' : '1';
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderCards();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < allCards.length - 1) {
+                currentIndex++;
+                renderCards();
+            }
+        });
+
+        // Indítás
+        loadCards();
+    </script>
+</body>
+</html>
